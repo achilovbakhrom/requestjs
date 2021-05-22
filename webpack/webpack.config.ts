@@ -25,7 +25,7 @@ const config: Configuration = {
         publicPath: "/",
         library: "requestjs",
         
-        libraryTarget: "var",
+        libraryTarget: "umd",
     },    
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
