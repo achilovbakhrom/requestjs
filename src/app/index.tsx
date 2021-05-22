@@ -21,6 +21,8 @@ const useGlobalStyles = createUseStyles({
 const App: React.FC = () => {
     
     useGlobalStyles()
+
+    console.log("starting render content requestjs app")
     
     return (
         <div style={{padding: 10}}>
