@@ -15,7 +15,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "peerDependencies": {
+  
+  "dependencies": {    
     "@ant-design/icons": "^4.6.2",
     "@types/antd": "^1.0.0",
     "@types/ramda": "^0.27.40",
@@ -23,17 +24,15 @@
     "@types/react-dom": "^17.0.5",
     "@types/react-jss": "^10.0.0",
     "@types/jest": "^26.0.23",
+    "@types/axios": "^0.14.0",
+    "@types/faker": "^5.5.5",    
+    "@types/react-syntax-highlighter": "^13.5.0",
     "antd": "^4.15.6",
     "ramda": "^0.27.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-jss": "^10.6.0",
-    "rxjs": "6.6.7"
-  },
-  "dependencies": {    
-    "@types/axios": "^0.14.0",
-    "@types/faker": "^5.5.5",    
-    "@types/react-syntax-highlighter": "^13.5.0",    
+    "rxjs": "6.6.7",    
     "axios": "^0.21.1",
     "faker": "^5.5.3",    
     "react-syntax-highlighter": "^15.4.3"

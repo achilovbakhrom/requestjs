@@ -10,7 +10,7 @@ interface Configuration extends webpack.Configuration {
 
 const config: Configuration = {    
     mode: "development",
-    entry:  path.resolve(__dirname, "..", "src", "index.tsx"),
+    entry:  path.resolve(__dirname, "..", "src", "app", "index.tsx"),
     devtool: "source-map",   
     devServer: {
         host: "localhost",

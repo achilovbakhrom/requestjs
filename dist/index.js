@@ -28630,8 +28630,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.RequestFactory = void 0;
 var axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/axios/index.js"));
 var ramda_1 = __webpack_require__(/*! ramda */ "./node_modules/ramda/es/index.js");
-var utils_1 = __webpack_require__(/*! ../utils */ "./src/utils/index.ts");
-var parseUtils_1 = __webpack_require__(/*! ../utils/parseUtils */ "./src/utils/parseUtils.ts");
+var utils_1 = __webpack_require__(/*! ./utils */ "./src/core/utils/index.ts");
+var parseUtils_1 = __webpack_require__(/*! ./utils/parseUtils */ "./src/core/utils/parseUtils.ts");
 ;
 var Request = /** @class */ (function () {
     function Request(config) {
@@ -28911,10 +28911,10 @@ Object.defineProperty(exports, "useDeleteStream", ({ enumerable: true, get: func
 
 /***/ }),
 
-/***/ "./src/utils/index.ts":
-/*!****************************!*\
-  !*** ./src/utils/index.ts ***!
-  \****************************/
+/***/ "./src/core/utils/index.ts":
+/*!*********************************!*\
+  !*** ./src/core/utils/index.ts ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -28936,10 +28936,10 @@ exports.toPromise = toPromise;
 
 /***/ }),
 
-/***/ "./src/utils/parseUtils.ts":
-/*!*********************************!*\
-  !*** ./src/utils/parseUtils.ts ***!
-  \*********************************/
+/***/ "./src/core/utils/parseUtils.ts":
+/*!**************************************!*\
+  !*** ./src/core/utils/parseUtils.ts ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";

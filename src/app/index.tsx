@@ -1,4 +1,7 @@
 import React from "react";
+import ReactDOM from 'react-dom';
+import 'antd/dist/antd.css';
+import { ApiProvider } from "../core";
 import { createUseStyles } from "react-jss";
 import { Collapse, Card, } from "antd";
 import GetRequestHookComponent from "./components/getRequestHook";
@@ -18,7 +21,8 @@ const useGlobalStyles = createUseStyles({
     },
 });
 
-const App: React.FC = () => {
+
+const App: React.FC = () => {    
     
     useGlobalStyles()
 
@@ -41,4 +45,14 @@ const App: React.FC = () => {
     )
 }
 
-export default App;
+console.log("starting requestjs app");
+ReactDOM.render(
+    <ApiProvider
+        timeout={60000}
+        baseURL="https://jsonplaceholder.typicode.com"
+        withCredentials={true}        
+    >
+        <App />
+    </ApiProvider>,     
+    document.getElementById("root"),
+);

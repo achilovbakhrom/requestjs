@@ -23,18 +23,16 @@ const config: Configuration = {
         extensions: [".ts", ".tsx", ".js"],
     },
     module: {
-        rules: [
-            {
-                test: /bootstrap\.tsx$/,
-                loader: "bundle-loader",
-                options: {
-                    lazy: true,
-                },
-            },
+        rules: [            
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: [/node_modules/, /__tests__/],
+                use: [{
+                    loader: 'ts-loader',
+                    options: {
+                        configFile: "tsconfig.lib.json",                    
+                    },
+                }],                
+                exclude: [/node_modules/, /__tests__/],                
             },            
             {
                 test: /\.css$/,                
@@ -97,6 +95,7 @@ const config: Configuration = {
             percentBy: "modules",
         }),
     ],
+    
 };
 
 export default config;

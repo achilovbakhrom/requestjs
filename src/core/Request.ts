@@ -1,8 +1,8 @@
 import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
 import { prop } from "ramda";
 import { Observable } from "rxjs";
-import { toObservable } from "../utils";
-import { safeParseObject } from "../utils/parseUtils";
+import { toObservable } from "./utils";
+import { safeParseObject } from "./utils/parseUtils";
 
 export type HeaderType = any | null | undefined;
 
