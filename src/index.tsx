@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import { ApiProvider } from "./core";
 import App from "./app";
+import("./core");
 
 ReactDOM.render(
     <ApiProvider
@@ -14,5 +15,3 @@ ReactDOM.render(
     </ApiProvider>,     
     document.getElementById("root"),
 );
-
-export const sumOfTwoNumbers = (a: number, b: number) => a + b;
