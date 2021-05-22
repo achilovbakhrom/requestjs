@@ -7,6 +7,7 @@
   "scripts": {
     "start": "webpack serve --config ./webpack/webpack.config.ts --open",
     "build": "webpack --config ./webpack/webpack.config.ts",
+    "lib": "webpack --config ./webpack/webpack.lib.ts",
     "test": "jest",
     "cover": "jest --coverage",
     "prepare": "husky install"
