@@ -1,23 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import { 
-    RequestFactory,
-    IRequest,
-    ApiProvider,
-    useGet,
-    useGetStream,
-    usePostJSON,
-    usePostJSONStream,
-    usePostFormData,
-    usePostFormDataStream,
-    usePut,
-    usePutStream,
-    useDelete,
-    useDeleteStream,
-} from "./core";
+import { ApiProvider } from "./core";
 import App from "./app";
-
 
 ReactDOM.render(
     <ApiProvider
@@ -29,19 +14,3 @@ ReactDOM.render(
     </ApiProvider>,     
     document.getElementById("root"),
 );
-
-export {
-    RequestFactory,
-    IRequest,
-    ApiProvider,
-    useGet,
-    useGetStream,
-    usePostJSON,
-    usePostJSONStream,
-    usePostFormData,
-    usePostFormDataStream,
-    usePut,
-    usePutStream,
-    useDelete,
-    useDeleteStream,
-};
