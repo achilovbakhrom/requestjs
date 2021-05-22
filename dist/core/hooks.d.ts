@@ -12,3 +12,4 @@ export declare const usePutStream: <BODY, RESPONSE_BODY>(url: string, body: BODY
 export declare const useDelete: <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, headers?: HeaderType) => HookReturnType<RESPONSE_BODY>;
 export declare const useDeleteStream: <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, headers?: HeaderType) => Observable<RESPONSE_BODY>;
 export {};
+//# sourceMappingURL=hooks.d.ts.map

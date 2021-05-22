@@ -21,9 +21,10 @@ const config: Configuration = {
     },
     output: {
         path: path.resolve(__dirname, "..", "dist"),
-        filename: "index.[contenthash].js",
+        filename: "index.js",
         publicPath: "/",
         library: "requestjs",
+        globalObject: "this",
         libraryTarget: "umd",
     },    
     resolve: {

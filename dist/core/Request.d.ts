@@ -17,3 +17,4 @@ export interface IRequest {
 export declare class RequestFactory {
     static createInstance(config: AxiosRequestConfig): IRequest;
 }
+//# sourceMappingURL=Request.d.ts.map

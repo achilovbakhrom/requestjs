@@ -4,3 +4,4 @@ export declare type Post = {
     title: string;
     body: string;
 };
+//# sourceMappingURL=Post.d.ts.map

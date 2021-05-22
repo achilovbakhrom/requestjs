@@ -5,3 +5,4 @@ export declare type Comment = {
     email: string;
     body: string;
 };
+//# sourceMappingURL=Comment.d.ts.map
