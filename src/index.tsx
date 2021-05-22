@@ -4,6 +4,7 @@ import 'antd/dist/antd.css';
 import { ApiProvider } from "./core";
 import App from "./app";
 
+export const add = (a: number, b: number) => a + b;
 
 ReactDOM.render(
     <ApiProvider
