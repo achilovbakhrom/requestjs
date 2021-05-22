@@ -15,4 +15,4 @@ ReactDOM.render(
     document.getElementById("root"),
 );
 
-export const add = (a: number, b: number) => a + b;
+export const sumOfTwoNumbers = (a: number, b: number) => a + b;
