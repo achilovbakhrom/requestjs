@@ -24,8 +24,8 @@ const config: Configuration = {
         filename: "index.js",
         publicPath: "/",
         library: "requestjs",
-        globalObject: "this",
-        libraryTarget: "umd",
+        
+        libraryTarget: "var",
     },    
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
