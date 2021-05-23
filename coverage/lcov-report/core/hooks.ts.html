@@ -340,7 +340,7 @@ export const useGet = &lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS,
     
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!requestClient) {
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
 &nbsp;
     const [isLoading, setIsLoading] = useState&lt;boolean&gt;(false);
     const [response, setResponse] = useState&lt;RESPONSE_BODY&gt;();
@@ -360,14 +360,14 @@ export const useGet = &lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS,
 export const useGetStream = <span class="fstat-no" title="function not covered" >&lt;P</span>ARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!requestClient) {</span>
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
 <span class="cstat-no" title="statement not covered" >    return requestClient.getStream(url, params, headers);</span>
 };
 &nbsp;
 export const usePostJSON = &lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = null): HookReturnType&lt;RESPONSE_BODY&gt; =&gt; {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!requestClient) {
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
     const [isLoading, setIsLoading] = useState&lt;boolean&gt;(false);
     const [response, setResponse] = useState&lt;RESPONSE_BODY&gt;();
 &nbsp;
@@ -386,7 +386,7 @@ export const usePostJSON = &lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, 
 export const usePostFormData = <span class="fstat-no" title="function not covered" >&lt;B</span>ODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: HookReturnType&lt;RESPONSE_BODY&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!requestClient) {</span>
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
 &nbsp;
     const [isLoading, setIsLoading] = <span class="cstat-no" title="statement not covered" >useState&lt;boolean&gt;(false);</span>
     const [response, setResponse] = <span class="cstat-no" title="statement not covered" >useState&lt;RESPONSE_BODY&gt;();</span>
@@ -405,21 +405,21 @@ export const usePostFormData = <span class="fstat-no" title="function not covere
 export const usePostJSONStream = <span class="fstat-no" title="function not covered" >&lt;B</span>ODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!requestClient) {</span>
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
 <span class="cstat-no" title="statement not covered" >    return requestClient.postJSONStream(url, body, headers);</span>
 };    
 &nbsp;
 export const usePostFormDataStream = <span class="fstat-no" title="function not covered" >&lt;B</span>ODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!requestClient) {</span>
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
 <span class="cstat-no" title="statement not covered" >    return requestClient.postFormDataStream(url, body, headers)</span>
 };
 &nbsp;
 export const usePut = &lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = null): HookReturnType&lt;RESPONSE_BODY&gt; =&gt; {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!requestClient) {
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
 &nbsp;
     const [isLoading, setIsLoading] = useState&lt;boolean&gt;(false);
     const [response, setResponse] = useState&lt;RESPONSE_BODY&gt;();
@@ -438,14 +438,14 @@ export const usePut = &lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, heade
 export const usePutStream = <span class="fstat-no" title="function not covered" >&lt;B</span>ODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!requestClient) {</span>
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
 <span class="cstat-no" title="statement not covered" >    return requestClient.putStream(url, body, headers);</span>
 };
 &nbsp;
 export const useDelete = &lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS, headers: HeaderType = null): HookReturnType&lt;RESPONSE_BODY&gt; =&gt; {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!requestClient) {
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
     const [isLoading, setIsLoading] = useState&lt;boolean&gt;(false);
     const [response, setResponse] = useState&lt;RESPONSE_BODY&gt;();
 &nbsp;
@@ -463,7 +463,7 @@ export const useDelete = &lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARA
 export const useDeleteStream = <span class="fstat-no" title="function not covered" >&lt;P</span>ARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!requestClient) {</span>
 <span class="cstat-no" title="statement not covered" >        throw Error("Please provide ApiProvider!");</span>
-    };
+    }
 <span class="cstat-no" title="statement not covered" >    return requestClient.deleteStream(url, params, headers);</span>
 };</pre></td></tr></table></pre>
 
@@ -472,7 +472,7 @@ export const useDeleteStream = <span class="fstat-no" title="function not covere
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun May 23 2021 00:11:33 GMT+0500 (Uzbekistan Standard Time)
+                at Sun May 23 2021 13:54:30 GMT+0500 (Uzbekistan Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

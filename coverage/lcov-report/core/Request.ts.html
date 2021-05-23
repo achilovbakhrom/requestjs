@@ -262,8 +262,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
 import { prop } from "ramda";
 import { Observable } from "rxjs";
-import { toObservable } from "../utils";
-import { safeParseObject } from "../utils/parseUtils";
+import { toObservable } from "./utils";
+import { safeParseObject } from "./utils/parseUtils";
 &nbsp;
 export type HeaderType = any | null | undefined;
 &nbsp;
@@ -279,7 +279,7 @@ export interface IRequest {
     delete&lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS, headers: HeaderType): Promise&lt;RESPONSE_BODY&gt;
     deleteStream&lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS, headers: HeaderType): Observable&lt;RESPONSE_BODY&gt;
     getInstance(): AxiosInstance    
-};
+}
 &nbsp;
 class Request implements IRequest {
     
@@ -287,37 +287,37 @@ class Request implements IRequest {
     
     constructor(config: AxiosRequestConfig) {        
         this.instance = axios.create(config);
-    };
+    }
 &nbsp;
     get&lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Promise&lt;RESPONSE_BODY&gt; {
         return this.instance.get(url, {
             params,
             headers,
         }).then(prop("data"))
-    };
+    }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    ge</span>tStream&lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: any, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; {
 <span class="cstat-no" title="statement not covered" >        return toObservable(this.get&lt;PARAMS, RESPONSE_BODY&gt;(url, params, headers));</span>
-    };
+    }
     
     private post&lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Promise&lt;RESPONSE_BODY&gt; {
         return this.instance.post(url, body, { headers }).then(prop("data"));
-    };
+    }
 &nbsp;
     postJSON&lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Promise&lt;RESPONSE_BODY&gt; {
         return this.post(url, body, { 
             headers: {...safeParseObject(headers), "Content-Type": "application/json"},            
         });
-    };
+    }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    po</span>stJSONStream&lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; {
 <span class="cstat-no" title="statement not covered" >        return toObservable(this.postJSON(url, body, headers));</span>
-    };
+    }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    po</span>stFormData&lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Promise&lt;RESPONSE_BODY&gt; {
 <span class="cstat-no" title="statement not covered" >        if (body) {</span>
-            let formData = <span class="cstat-no" title="statement not covered" >new FormData();</span>
-<span class="cstat-no" title="statement not covered" >            for (var key in body) {</span>
+            const formData = <span class="cstat-no" title="statement not covered" >new FormData();</span>
+<span class="cstat-no" title="statement not covered" >            for (const key in body) {</span>
 <span class="cstat-no" title="statement not covered" >                formData.append(key, body[key] as never as string)</span>
             }
 <span class="cstat-no" title="statement not covered" >            return this.post(url, formData, {</span>
@@ -328,31 +328,31 @@ class Request implements IRequest {
                 headers: {...safeParseObject(headers), "Content-Type": "multipart/form-data"},
             });
         }
-    };
+    }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    po</span>stFormDataStream&lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; {
 <span class="cstat-no" title="statement not covered" >        return toObservable(this.postFormData(url, body, headers));</span>
-    };
+    }
 &nbsp;
     put&lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Promise&lt;RESPONSE_BODY&gt; {
         return this.instance.put(url, body, { headers }).then(prop("data"));
-    };
+    }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    pu</span>tStream&lt;BODY, RESPONSE_BODY&gt;(url: string, body: BODY, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; {
 <span class="cstat-no" title="statement not covered" >        return toObservable(this.put(url, body, headers));</span>
-    };
+    }
 &nbsp;
     delete&lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Promise&lt;RESPONSE_BODY&gt; {
         return this.instance.delete(url, { params, headers, }).then(prop("data"));
-    };
+    }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    de</span>leteStream&lt;PARAMS, RESPONSE_BODY&gt;(url: string, params: PARAMS, headers: HeaderType = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span>: Observable&lt;RESPONSE_BODY&gt; {
 <span class="cstat-no" title="statement not covered" >        return toObservable(this.delete(url, params, headers));</span>
-    };
+    }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    ge</span>tInstance(): AxiosInstance {
 <span class="cstat-no" title="statement not covered" >        return this.instance;</span>
-    };
+    }
 &nbsp;
 }
 &nbsp;
@@ -360,14 +360,14 @@ export class RequestFactory {
     static createInstance(config: AxiosRequestConfig): IRequest {
         return new Request(config)
     }
-};</pre></td></tr></table></pre>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun May 23 2021 00:11:33 GMT+0500 (Uzbekistan Standard Time)
+                at Sun May 23 2021 13:54:30 GMT+0500 (Uzbekistan Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
