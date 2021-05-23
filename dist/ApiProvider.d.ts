@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { AxiosRequestConfig } from "axios";
 import { IRequest } from "./";
 export declare let requestClient: IRequest;

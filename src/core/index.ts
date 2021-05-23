@@ -1,5 +1,5 @@
 import { IRequest, RequestFactory } from "./Request";
-import { ApiProvider } from "./ApiProvider";
+import { ApiProvider, requestClient, } from "./ApiProvider";
 import {
   useGet,
   useGetStream,
@@ -17,6 +17,7 @@ export {
   RequestFactory,
   IRequest,
   ApiProvider,
+  requestClient,
   useGet,
   useGetStream,
   usePostJSON,

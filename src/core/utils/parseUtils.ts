@@ -1,7 +1,7 @@
-import { ifElse, isNil, empty } from "ramda";
+import { ifElse, isNil, empty, always} from "ramda";
 
 export const safeParseObject = ifElse(
-  (value) => isNil(value),
+  isNil,
   empty,
   (value) => value
 );

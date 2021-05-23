@@ -26177,10 +26177,12 @@ var Request = /** @class */ (function () {
     }
     Request.prototype.get = function (url, params, headers) {
         if (headers === void 0) { headers = null; }
-        return this.instance.get(url, {
+        return this.instance
+            .get(url, {
             params: params,
             headers: headers,
-        }).then(ramda_1.prop("data"));
+        })
+            .then(ramda_1.prop("data"));
     };
     Request.prototype.getStream = function (url, params, headers) {
         if (headers === void 0) { headers = null; }
@@ -26231,7 +26233,7 @@ var Request = /** @class */ (function () {
     };
     Request.prototype.delete = function (url, params, headers) {
         if (headers === void 0) { headers = null; }
-        return this.instance.delete(url, { params: params, headers: headers, }).then(ramda_1.prop("data"));
+        return this.instance.delete(url, { params: params, headers: headers }).then(ramda_1.prop("data"));
     };
     Request.prototype.deleteStream = function (url, params, headers) {
         if (headers === void 0) { headers = null; }

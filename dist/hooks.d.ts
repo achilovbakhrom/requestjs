@@ -1,6 +1,10 @@
 import { Observable } from "rxjs";
 import { HeaderType } from "./Request";
-declare type HookReturnType<T> = [callApi: () => void, isLoading: boolean, response: T | undefined];
+declare type HookReturnType<T> = [
+    callApi: () => void,
+    isLoading: boolean,
+    response: T | undefined
+];
 export declare const useGet: <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, headers?: HeaderType) => HookReturnType<RESPONSE_BODY>;
 export declare const useGetStream: <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, headers?: HeaderType) => Observable<RESPONSE_BODY>;
 export declare const usePostJSON: <BODY, RESPONSE_BODY>(url: string, body: BODY, headers?: HeaderType) => HookReturnType<RESPONSE_BODY>;
