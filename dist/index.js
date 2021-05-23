@@ -26407,11 +26407,12 @@ exports.useDeleteStream = useDeleteStream;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.useDeleteStream = exports.useDelete = exports.usePutStream = exports.usePut = exports.usePostFormDataStream = exports.usePostFormData = exports.usePostJSONStream = exports.usePostJSON = exports.useGetStream = exports.useGet = exports.ApiProvider = exports.RequestFactory = void 0;
+exports.useDeleteStream = exports.useDelete = exports.usePutStream = exports.usePut = exports.usePostFormDataStream = exports.usePostFormData = exports.usePostJSONStream = exports.usePostJSON = exports.useGetStream = exports.useGet = exports.requestClient = exports.ApiProvider = exports.RequestFactory = void 0;
 var Request_1 = __webpack_require__(/*! ./Request */ "./src/core/Request.ts");
 Object.defineProperty(exports, "RequestFactory", ({ enumerable: true, get: function () { return Request_1.RequestFactory; } }));
 var ApiProvider_1 = __webpack_require__(/*! ./ApiProvider */ "./src/core/ApiProvider.tsx");
 Object.defineProperty(exports, "ApiProvider", ({ enumerable: true, get: function () { return ApiProvider_1.ApiProvider; } }));
+Object.defineProperty(exports, "requestClient", ({ enumerable: true, get: function () { return ApiProvider_1.requestClient; } }));
 var hooks_1 = __webpack_require__(/*! ./hooks */ "./src/core/hooks.ts");
 Object.defineProperty(exports, "useGet", ({ enumerable: true, get: function () { return hooks_1.useGet; } }));
 Object.defineProperty(exports, "useGetStream", ({ enumerable: true, get: function () { return hooks_1.useGetStream; } }));
@@ -26461,7 +26462,7 @@ exports.toPromise = toPromise;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.safeParseObject = void 0;
 var ramda_1 = __webpack_require__(/*! ramda */ "./node_modules/ramda/es/index.js");
-exports.safeParseObject = ramda_1.ifElse(function (value) { return ramda_1.isNil(value); }, ramda_1.empty, function (value) { return value; });
+exports.safeParseObject = ramda_1.ifElse(ramda_1.isNil, ramda_1.empty, function (value) { return value; });
 
 
 /***/ }),
