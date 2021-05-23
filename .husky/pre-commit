@@ -3,4 +3,7 @@
 
 yarn lint
 yarn test
+yarn cover
+yarn prettier
 yarn lib
+

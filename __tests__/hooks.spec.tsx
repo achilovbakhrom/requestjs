@@ -37,7 +37,7 @@ describe("Testing Hooks", () => {
         const [,isLoading3] = result.current;
         expect(isLoading3).toEqual(false);
         const [,,response] = result.current;
-        expect(response.length).toBeGreaterThan(0)        
+        expect(response.length).toBeGreaterThan(0)
     });
 
     it("usePostJSONHook", async () => {
