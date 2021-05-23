@@ -9,7 +9,7 @@ export const useGet = <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, heade
     
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [response, setResponse] = useState<RESPONSE_BODY>();
@@ -29,14 +29,14 @@ export const useGet = <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, heade
 export const useGetStream = <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, headers: HeaderType = null): Observable<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
     return requestClient.getStream(url, params, headers);
 };
 
 export const usePostJSON = <BODY, RESPONSE_BODY>(url: string, body: BODY, headers: HeaderType = null): HookReturnType<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [response, setResponse] = useState<RESPONSE_BODY>();
 
@@ -55,7 +55,7 @@ export const usePostJSON = <BODY, RESPONSE_BODY>(url: string, body: BODY, header
 export const usePostFormData = <BODY, RESPONSE_BODY>(url: string, body: BODY, headers: HeaderType = null): HookReturnType<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [response, setResponse] = useState<RESPONSE_BODY>();
@@ -74,21 +74,21 @@ export const usePostFormData = <BODY, RESPONSE_BODY>(url: string, body: BODY, he
 export const usePostJSONStream = <BODY, RESPONSE_BODY>(url: string, body: BODY, headers: HeaderType = null): Observable<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
     return requestClient.postJSONStream(url, body, headers);
 };    
 
 export const usePostFormDataStream = <BODY, RESPONSE_BODY>(url: string, body: BODY, headers: HeaderType = null): Observable<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
     return requestClient.postFormDataStream(url, body, headers)
 };
 
 export const usePut = <BODY, RESPONSE_BODY>(url: string, body: BODY, headers: HeaderType = null): HookReturnType<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [response, setResponse] = useState<RESPONSE_BODY>();
@@ -107,14 +107,14 @@ export const usePut = <BODY, RESPONSE_BODY>(url: string, body: BODY, headers: He
 export const usePutStream = <BODY, RESPONSE_BODY>(url: string, body: BODY, headers: HeaderType = null): Observable<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
     return requestClient.putStream(url, body, headers);
 };
 
 export const useDelete = <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, headers: HeaderType = null): HookReturnType<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [response, setResponse] = useState<RESPONSE_BODY>();
 
@@ -132,6 +132,6 @@ export const useDelete = <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, he
 export const useDeleteStream = <PARAMS, RESPONSE_BODY>(url: string, params: PARAMS, headers: HeaderType = null): Observable<RESPONSE_BODY> => {
     if (!requestClient) {
         throw Error("Please provide ApiProvider!");
-    };
+    }
     return requestClient.deleteStream(url, params, headers);
 };
