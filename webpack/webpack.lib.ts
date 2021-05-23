@@ -77,10 +77,7 @@ const config: Configuration = {
             },
         ]
     },
-    externals: {
-        "react": "react",
-        "react-dom": "react-dom",
-    },
+    externals: ["react", "react-dom"],
     plugins: [
         new HtmlWebpackPlugin({
             filename: "index.html",
